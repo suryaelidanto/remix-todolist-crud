@@ -19,10 +19,10 @@ import {
   getPosts,
   updatePost,
 } from "../modules/posts/posts.service";
-import PostForm from "./PostForm";
+import PostForm from "./components/PostForm";
 
 export async function loader() {
-  return await getPosts();
+  return await getPosts()
 }
 
 export async function action({ request }: ActionArgs) {
