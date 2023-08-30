@@ -4,11 +4,12 @@ import {
   Input,
   ListItem,
   Text,
-  UnorderedList
+  UnorderedList,
 } from "@chakra-ui/react";
 import { ActionArgs, redirect } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
 import { BsFillTrashFill } from "react-icons/bs";
+import { AiOutlineCheckSquare, AiFillCheckSquare } from "react-icons/ai";
 import {
   createPostSchema,
   updatePostSchema,
@@ -22,7 +23,7 @@ import {
 import PostForm from "./components/PostForm";
 
 export async function loader() {
-  return await getPosts()
+  return await getPosts();
 }
 
 export async function action({ request }: ActionArgs) {
@@ -92,9 +93,13 @@ export default function Posts() {
                     value={post.isDone.toString()}
                   />
                   {post.isDone ? (
-                    <Button type="submit">❌</Button>
+                    <Button type="submit" variant={"ghost"}>
+                      <AiFillCheckSquare style={{ color: "green" }} />
+                    </Button>
                   ) : (
-                    <Button type="submit">✅</Button>
+                    <Button type="submit" variant={"ghost"}>
+                      <AiOutlineCheckSquare style={{ color: "green" }} />
+                    </Button>
                   )}
                 </Form>
                 <Text>{post.title}</Text>

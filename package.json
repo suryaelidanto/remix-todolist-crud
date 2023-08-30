@@ -27,6 +27,7 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.8",
     "@remix-run/dev": "^1.19.3",
     "@remix-run/eslint-config": "^1.19.3",
     "@remix-run/serve": "^1.19.3",
